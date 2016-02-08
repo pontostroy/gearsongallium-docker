@@ -38,7 +38,7 @@ while getopts "h?p:" opt; do
         show_help
         exit 0
         ;;
-    p)  PTS=(-v=$OPTARG:/home/gog/.phoronix-test-suite)
+    p)  PTS="-v=$OPTARG:/home/gog/.phoronix-test-suite"
         echo "PTS BIND $PTS"
         ;;
     esac

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -x /usr/bin/xhost ] ; then
     /usr/bin/xhost +
@@ -45,22 +45,22 @@ echo "Run with
          
          
          
-while getopts "h?wsip:" opt; do
+while getopts "h?w:s:i:p:" opt; do
     case "$opt" in
     h|\?)
         show_help
         exit 0
         ;;
-    w)  WINE=(-v=$OPTARG:/home/gog/.wine)
+    w)  WINE="-v=$OPTARG:/home/gog/.wine"
         echo "WINE BIND $WINE"
         ;;
-    s)  STEAM=(-v=$OPTARG:/home/gog/.local/share/Steam)
+    s)  STEAM=(-v=$OPTARG:/home/gog/.local/share/Steam/)
         echo "STEAN BIND $STEAM"
         ;;
-    i)  STEAM=($STEAM -v=$OPTARG:/home/gog/.local/share/Steam/steamapps)
+    i)  STEAM="$STEAM -v=$OPTARG:/home/gog/.local/share/Steam/steamapps/"
         echo "STEAN + STEAM APP BIND $STEAM" 
         ;;
-    p)  PTS=(-v=$OPTARG:/home/gog/.phoronix-test-suite)
+    p)  PTS="-v=$OPTARG:/home/gog/.phoronix-test-suite"
         echo "PTS BIND $PTS"
         ;;
     esac
