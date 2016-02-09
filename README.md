@@ -1,27 +1,47 @@
 # Gearsongallium docker images
-
+[How-to,instructions and benchmarks](http://www.gearsongallium.com/?p=2708)
 # Supported tags
 
-- gog-full
+- gog-full 32\64 bit libs, wine and linux steam
 ```sh
-docker pull pontostroy/gearsongallium-docker:gog-full
-docker run --rm --privileged -ti -e "WORKDIR=/opt/`basename $PWD`/"  \
+sudo docker pull pontostroy/gearsongallium-docker:gog-full
+sudo docker run --rm --privileged -ti \
+-e "WORKDIR=/opt/`basename $PWD`/"  \
 -e="DISPLAY=unix:0.0" \
 -v="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 -v="/dev/dri:/dev/dri:rw" \
 -v="/$PWD:/opt:rw" \
--v="/dev/snd:/dev/snd"  gog-full mc
+-v="/dev/snd:/dev/snd" pontostroy/gearsongallium-docker:gog-full mc
 ```
 ---
-- gog-mini
+- gog-mini 64 bit libs
 ```sh
-docker pull pontostroy/gearsongallium-docker:gog-mini
-docker run --rm --privileged -ti -e "WORKDIR=/opt/`basename $PWD`/"  \
+sudo docker pull pontostroy/gearsongallium-docker:gog-mini
+sudo docker run --rm --privileged -ti \
+-e "WORKDIR=/opt/`basename $PWD`/"  \
 -e="DISPLAY=unix:0.0" \
 -v="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
 -v="/dev/dri:/dev/dri:rw"  \
 -v="/$PWD:/opt:rw" \
--v="/dev/snd:/dev/snd"  gog-mini mc
+-v="/dev/snd:/dev/snd"   pontostroy/gearsongallium-docker:gog-mini mc
+```
+---
+# From git
+```sh
+git clone https://github.com/pontostroy/gearsongallium-docker.git
+
+cd ./gearsongallium-docker
+
+cd ./leap-full
+#or
+cd ./leap-mini
+
+./build.sh
+#or
+sudo docker build -t gog-full .
+
+./run_gog.sh
+
 ```
 ---
 # What is Gearsongallium?
@@ -33,5 +53,45 @@ openSUSE based images with opensource video stack from [gearsongallium](http://g
   - GUI and audio apps support
   - Phoronix test suite
   - easy to use with [run_gog.sh](https://github.com/pontostroy/gearsongallium-docker/blob/master/leap-full/run_gog.sh) shell script for binding dirs from host for steam, wine or phoronix test suite
-
-Only what you need is docker and  not a very old version of kernel and x-server.
+---
+# run_gog.sh using examples
+```sh
+Run with
+         -w wine dir(usually ~/.wine)
+         -s steam dir(usually ~/.local/share/Steam)
+         -i steam app dir (usually ~/.local/share/Steam/steamapps)
+         -p phoronix test suite dir (usually ~/.phoronix-test-suite)
+         -n image name or tag
+         -h show help message
+```
+---
+For wine
+/home/pont/.wine wiil be available in docker /home/gog/.wine an you can use yours wine prefix in docker.
+Current workdir directory will be available in docker /opt/
+```sh
+./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -w /home/pont/.wine
+```
+---
+For phoronix test suite
+/home/pont/.phoronix-test-suite wiil be available in docker /home/gog/.phoronix-test-suite an you can use yours phoronix-test-suite files in docker.
+Current workdir directory will be available in docker /opt/
+```sh
+./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -p /home/pont/.phoronix-test-suite
+```
+---
+For Steam
+/home/pont/.local/share/Steam (but it is better not to specify an already created Steam and simply specify an empty folder for Steam installation) wiil be available in docker /home/gog/.local/share/Steam, also you can bind~/.local/share/Steam/steamapps  and  use yours game files in docker.
+Current workdir directory will be available in docker /opt/
+```sh
+./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -s /home/pont/.local/share/Steam -i /home/pont/.local/share/Steam/steamapps
+```
+---
+# What work?
+- Unigine velley and heaven
+- Xonotic
+- Lighsmark
+- Gputest
+- Steam (linux)
+- Wine(steam, gallium-nine)
+- clpeak
+......

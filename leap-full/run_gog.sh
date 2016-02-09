@@ -5,14 +5,23 @@ if [ -x /usr/bin/xhost ] ; then
 fi
 OPTIND=1
 DOCKER='docker run --privileged -ti'
+# delete image changes after stop
 RM="--rm"
+#get current dir
 WD=(WORKDIR=/opt/`basename $PWD`/)
+#
 DISP="DISPLAY=unix:0.0"
+#X-server socket
 XSOC="/tmp/.X11-unix:/tmp/.X11-unix:rw"
+#dri path
 DRI="/dev/dri:/dev/dri:rw"
+#set current dir as /opt/ in docker
 DIR="/$PWD:/opt:rw"
+#sound
 SOUND="/dev/snd:/dev/snd"
+# run this at first
 DOCRUN="mc"
+#image name for docker use  sudo docker images
 IMAGE_NAME="gog-full"
 ####For Steam 
 #-v="/some_dir:/home/gog/.local/share/Steam" -v="/home/username/.local/share/Steam/steamapps:/home/gog/.local/share/Steam/steamapps"
@@ -36,10 +45,11 @@ PST=""
 
 function show_help {
 echo "Run with
-         -w wine dir
-         -s steam dir
-         -i steam app dir
-         -p phoronix test suite dir
+         -w wine dir(usually ~/.wine)
+         -s steam dir(usually ~/.local/share/Steam)
+         -i steam app dir (usually ~/.local/share/Steam/steamapps)
+         -p phoronix test suite dir (usually ~/.phoronix-test-suite)
+         -n image name or tag
          -h show help message"
 }
          
@@ -62,6 +72,9 @@ while getopts "h?w:s:i:p:" opt; do
         ;;
     p)  PTS="-v=$OPTARG:/home/gog/.phoronix-test-suite"
         echo "PTS BIND $PTS"
+        ;;
+    n)  IMAGE_NAME="$OPTARG"
+        echo "IMAGE NAME $IMAGE_NAME"
         ;;
     esac
 done
