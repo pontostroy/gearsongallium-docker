@@ -55,7 +55,7 @@ echo "Run with
          
          
          
-while getopts "h?w:s:i:p:" opt; do
+while getopts "h?w:s:i:p:n:" opt; do
     case "$opt" in
     h|\?)
         show_help
