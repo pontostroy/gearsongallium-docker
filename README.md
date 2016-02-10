@@ -87,7 +87,7 @@ Current workdir directory will be available in docker /opt/
 ```
 ---
 # What work?
-- Unigine velley and heaven
+- Unigine valley and heaven
 - Xonotic
 - Lighsmark
 - Gputest
