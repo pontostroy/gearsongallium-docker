@@ -15,6 +15,9 @@ DISP="DISPLAY=unix:0.0"
 XSOC="/tmp/.X11-unix:/tmp/.X11-unix:rw"
 #dri path
 DRI="/dev/dri:/dev/dri:rw"
+#
+SHM="/dev/shm:/dev/shm"
+DBUS="/var/lib/dbus:/var/lib/dbus"
 #set current dir as /opt/ in docker
 DIR="/$PWD:/opt:rw"
 #sound
@@ -84,7 +87,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift      
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$SOUND $STEAM $PTS $WINE $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $IMAGE_NAME $DOCRUN"
 echo $CMD
 
 exec $CMD

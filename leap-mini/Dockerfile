@@ -9,7 +9,7 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/mu
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --no-recommends  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2 \
 Mesa-libglapi0 bash libXpm4 clpeak clinfo libasound2 \
-Mesa-libOpenCL Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc \ 
+Mesa-libOpenCL Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
 libxcb-xinerama0 libXfont1 libfreetype6 fontconfig glibc-locale fonts-config \

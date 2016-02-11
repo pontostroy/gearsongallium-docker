@@ -9,7 +9,7 @@ DOCKER='docker run --privileged -ti'
 # delete image changes after stop
 RM="--rm"
 #get current dir
-WD=(WORKDIR=/opt/`basename $PWD`/)
+WD="WORKDIR=/opt/`basename $PWD`/"
 #
 DISP="DISPLAY=unix:0.0"
 #X-server socket
