@@ -7,18 +7,19 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/ga
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
 zypper --gpg-auto-import-keys ref -s; \
-zypper -n in --no-recommends  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2 \
-Mesa-libglapi0 bash libXpm4 clpeak clinfo libasound2 \
-Mesa-libOpenCL Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
-llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
-libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
-libxcb-xinerama0 libXfont1 libfreetype6 fontconfig glibc-locale fonts-config \
-dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
-php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json \
-libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
-libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6 \
+zypper -n in --no-recommends  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2; \
+Mesa-libglapi0 bash libXpm4 libasound2; \
+ Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less; \ 
+llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop; \
+libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1; \
+libxcb-xinerama0 libXfont1 libfreetype6 fontconfig glibc-locale fonts-config; \
+dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring; \
+php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json; \
+libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11; \
+libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6; \
 libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse; \
 zypper clean
+## Mesa-libOpenCL clpeak clinfo ; \ disable opencl for now
 
 RUN /usr/sbin/fonts-config; \
 ln -s /sbin/lspci /usr/bin/lspci; \
