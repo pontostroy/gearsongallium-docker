@@ -3,12 +3,13 @@
 if [ -x /usr/bin/xhost ] ; then
     /usr/bin/xhost +
 fi
+PW="$PWD"
 OPTIND=1
 DOCKER='docker run --privileged -ti'
 # delete image changes after stop
 RM="--rm"
 #get current dir
-WD=(WORKDIR=/opt/`basename $PWD`/)
+WD=(WORKDIR=/opt/`basename "$PW"`/)
 #
 DISP="DISPLAY=unix:0.0"
 #X-server socket
@@ -19,7 +20,7 @@ DRI="/dev/dri:/dev/dri:rw"
 SHM="/dev/shm:/dev/shm"
 DBUS="/var/lib/dbus:/var/lib/dbus"
 #set current dir as /opt/ in docker
-DIR="/$PWD:/opt:rw"
+DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
 # run this at first
@@ -44,7 +45,8 @@ WINE=""
 PST=""
 #PTS=-v="/some_dir_or_/home/username/.phoronix-test-suite:/home/gog/.phoronix-test-suite"
 #
-
+WD=$( echo "$WD" | sed 's/ /\\ /g' )
+DR=$( echo "$DR" | sed 's/ /\\ /g' )
 
 function show_help {
 echo "Run with
@@ -91,7 +93,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift      
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $IMAGE_NAME $DOCRUN"
-echo $CMD
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $IMAGE_NAME $DOCRUN"
+echo "$CMD"
 
-exec $CMD
+eval  $CMD
