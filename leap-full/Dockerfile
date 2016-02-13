@@ -64,5 +64,5 @@ passwd -d root
 
 USER gog
 COPY ./env.sh /home/gog/.bashrc
-
-CMD mc
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
