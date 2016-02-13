@@ -16,6 +16,9 @@ DISP="DISPLAY=unix:0.0"
 XSOC="/tmp/.X11-unix:/tmp/.X11-unix:rw"
 #dri path
 DRI="/dev/dri:/dev/dri:rw"
+#
+SHM="/dev/shm:/dev/shm"
+DBUS="/var/lib/dbus:/var/lib/dbus"
 #set current dir as /opt/ in docker
 DIR="/$PWD:/opt:rw"
 #sound
@@ -36,7 +39,8 @@ function show_help {
 echo "Run with
          -p phoronix test suite dir (usually ~./phoronix-test-suite)
          -h show help message
-         -n image name or tag"
+         -c command to run (default mc)
+         -n image name with tag"
 }
          
          
@@ -53,6 +57,9 @@ while getopts "h?p:n:" opt; do
     n)  IMAGE_NAME="$OPTARG"
         echo "IMAGE NAME $IMAGE_NAME"
         ;;
+    c)  DOCRUN="$OPTARG"
+        echo "run $IMAGE_NAME"
+        ;;
     esac
 done
 
@@ -61,7 +68,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift      
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$SOUND  $PTS  $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND  $PTS  $IMAGE_NAME $DOCRUN"
 echo $CMD
 
 exec $CMD

@@ -2,7 +2,9 @@
 [How-to,instructions and benchmarks](http://www.gearsongallium.com/?p=2708)
 # Supported tags
 
-- gog-full 32\64 bit libs, wine and linux steam
+- gog-full 
+[![](https://badge.imagelayers.io/pontostroy/gearsongallium-docker:latest.svg)](https://imagelayers.io/?images=pontostroy/gearsongallium-docker:gog-full 'Get your own badge on imagelayers.io')
+32\64 bit libs, wine and linux steam
 ```sh
 sudo docker pull pontostroy/gearsongallium-docker:gog-full
 sudo docker run --rm --privileged -ti \
@@ -14,7 +16,8 @@ sudo docker run --rm --privileged -ti \
 -v="/dev/snd:/dev/snd" pontostroy/gearsongallium-docker:gog-full mc
 ```
 ---
-- gog-mini 64 bit libs
+- gog-mini
+64 bit libs
 ```sh
 sudo docker pull pontostroy/gearsongallium-docker:gog-mini
 sudo docker run --rm --privileged -ti \
@@ -80,8 +83,16 @@ Current workdir directory will be available in docker /opt/
 ```
 ---
 For Steam
-/home/pont/.local/share/Steam (but it is better not to specify an already created Steam and simply specify an empty folder for Steam installation) wiil be available in docker /home/gog/.local/share/Steam, also you can bind~/.local/share/Steam/steamapps  and  use yours game files in docker.
+For Steam
+/home/pont/.local/share/Steam (before using local copy of  steam on docker logout from your local steam and do no use "Remember my password", but it is better not to specify an already created Steam and simply specify an empty folder for Steam installation) wiil be available in docker /home/gog/.local/share/Steam, also you can bind~/.local/share/Steam/steamapps  and  use yours game files in docker.
+
+If you do not have a sound, run steam with LD_PRELOAD
+```sh
+LD_PRELOAD=/usr/lib/libasound.so.2 steam
+```
+
 Current workdir directory will be available in docker /opt/
+
 ```sh
 ./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -s /home/pont/.local/share/Steam -i /home/pont/.local/share/Steam/steamapps
 ```
@@ -91,7 +102,10 @@ Current workdir directory will be available in docker /opt/
 - Xonotic
 - Lighsmark
 - Gputest
+- SOMA
+- Grid Autosport
 - Steam (linux)
 - Wine(steam, gallium-nine)
 - clpeak
+- The Talos Principle
 ......

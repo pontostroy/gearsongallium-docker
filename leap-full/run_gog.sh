@@ -52,13 +52,14 @@ echo "Run with
          -s steam dir(usually ~/.local/share/Steam)
          -i steam app dir (usually ~/.local/share/Steam/steamapps)
          -p phoronix test suite dir (usually ~/.phoronix-test-suite)
-         -n image name or tag
+         -n image name with tag
+         -c command to run (default mc)
          -h show help message"
 }
          
          
          
-while getopts "h?w:s:i:p:n:" opt; do
+while getopts "h?w:s:i:p:n:c:" opt; do
     case "$opt" in
     h|\?)
         show_help
@@ -78,6 +79,9 @@ while getopts "h?w:s:i:p:n:" opt; do
         ;;
     n)  IMAGE_NAME="$OPTARG"
         echo "IMAGE NAME $IMAGE_NAME"
+        ;;
+    c)  DOCRUN="$OPTARG"
+        echo "run $IMAGE_NAME"
         ;;
     esac
 done

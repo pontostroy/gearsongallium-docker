@@ -23,7 +23,7 @@ libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa als
 wine steam tar unzip coreutils ca-certificates-cacert ca-certificates-mozilla libcanberra-gtk2-module \
 Mesa-libd3d-32bit Mesa-libGLESv1_CM1-32bit Mesa-libGLESv2-2-32bit libbz2-1-32bit libGLEW1_13-32bit libXi6 libICE6-32bit libSM6-32bit  libXtst6-32bit libXinerama1-32bit libtxc_dxtn-32bit \
 libSDL-1_2-0-32bit  libSDL2-2_0-0-32bit libSDL_gfx15-32bit  libSDL2_gfx-1_0-0-32bit libusb-1_0-0-32bit \
-libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gconf2-32bit alsa-plugins-pulse-32bit alsa-oss-32bit; \
+libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gconf2-32bit alsa-plugins-pulse-32bit alsa-oss-32bit \
 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo; \
 zypper clean
 
