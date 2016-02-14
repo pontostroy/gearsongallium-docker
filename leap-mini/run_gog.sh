@@ -19,6 +19,7 @@ DRI="/dev/dri:/dev/dri:rw"
 #
 SHM="/dev/shm:/dev/shm"
 DBUS="/var/lib/dbus:/var/lib/dbus"
+UDV="/run/udev/data:/run/udev/data"
 #set current dir as /opt/ in docker
 DR="$PW:/opt:rw"
 #sound
@@ -69,7 +70,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift      
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND  $PTS  $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND -v=$UDV $PTS  $IMAGE_NAME $DOCRUN"
 echo $CMD
 
 eval  $CMD
