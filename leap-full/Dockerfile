@@ -18,7 +18,7 @@ libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config \
 dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
 php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr \
 libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 \
-libxcb-composite0 libXTrap6 libXcomposite libXfont1 libXft2 \
+libxcb-composite0 libXTrap6 libXfont1 libXft2 \
 libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
 libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6 libgnutls-openssl27 alsa-plugins-pulse alsa-oss \
 libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse strace which \
@@ -28,7 +28,7 @@ libSDL-1_2-0-32bit  libSDL2-2_0-0-32bit libSDL_gfx15-32bit  libSDL2_gfx-1_0-0-32
 libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gconf2-32bit alsa-plugins-pulse-32bit alsa-oss-32bit \
 libxcb-xf86dri0-32bit libxcb-xv0-32bit libxcb-util1-32bit libxcb-image0-32bit libxcb-dpms0-32bit  libxcb-dpms0-32bit libxcb-cursor0-32bit \
 libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
-libxcb-composite0-32bit libXTrap6-32bit libXcomposite-32bit libXfont1-32bit \
+libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo; \
 zypper clean
 
@@ -62,7 +62,6 @@ echo "Defaults !insults" > /etc/sudoers; \
 echo "gog ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers; \
 echo "%wheel ALL=(ALL) NOPASSWD: ALL"  >> /etc/sudoers; \
 mkdir -p /home/gog/.local/share/Steam; \
-mkdir /home/gog/.wine; \
 mkdir /home/gog/.steam; \
 chown -hR gog:users /home/gog; \
 passwd -d root
