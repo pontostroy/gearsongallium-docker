@@ -6,10 +6,12 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/ho
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
+zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/gst/openSUSE_Leap_42.1/ pont_gst;\
+zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/ packman;\
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n rm krb5-mini; \
 zypper -n --gpg-auto-import-keys up; \
-zypper -n in --no-recommends  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
+zypper -n in --no-recommends --replacefiles  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
 Mesa-libglapi0  bash libXpm4 libasound2 \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
@@ -29,7 +31,9 @@ libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gcon
 libxcb-xf86dri0-32bit libxcb-xv0-32bit libxcb-util1-32bit libxcb-image0-32bit libxcb-dpms0-32bit  libxcb-dpms0-32bit libxcb-cursor0-32bit \
 libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
-Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo; \
+Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo \
+mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
+libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo; \
 zypper clean
 
 RUN /usr/sbin/fonts-config; \

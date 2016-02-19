@@ -84,7 +84,7 @@ Current workdir directory will be available in docker /opt/
 ---
 For Steam
 For Steam
-/home/pont/.local/share/Steam (before using local copy of  steam on docker logout from your local steam and do no use "Remember my password", but it is better not to specify an already created Steam and simply specify an empty folder for Steam installation) wiil be available in docker /home/gog/.local/share/Steam, also you can bind~/.local/share/Steam/steamapps  and  use yours game files in docker.
+/home/pont/.local/share/Steam (before using local copy of steam on docker logout from your local steam and do no use “Remember my password”, but it is better not to specify an already created Steam and simply specify an empty folder for Steam installation) will be available in docker /home/gog/.local/share/Steam, also you can bind ~/.local/share/Steam/steamapps  and  use yours game files in fresh installed steam.
 
 If you do not have a sound, run steam with LD_PRELOAD
 ```sh
@@ -95,6 +95,9 @@ Current workdir directory will be available in docker /opt/
 
 ```sh
 ./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -s /home/pont/.local/share/Steam -i /home/pont/.local/share/Steam/steamapps
+
+run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -s ~/.local/share/Steam -c "env LD_PRELOAD=/usr/lib/libasound.so.2 steam"
+
 ```
 ---
 # What work?
@@ -108,4 +111,7 @@ Current workdir directory will be available in docker /opt/
 - Wine(steam, gallium-nine)
 - clpeak
 - The Talos Principle
+- DRI_PRIME
+- mpv with vaapi\vdpau\opengl
+- radeon vce
 ......
