@@ -19,11 +19,11 @@ DRI="/dev/dri:/dev/dri:rw"
 #
 SHM="/dev/shm:/dev/shm"
 DBUS="/var/lib/dbus:/var/lib/dbus"
-UDV="/run/udev/data:/run/udev/data"
 #set current dir as /opt/ in docker
 DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
+XDG=""
 # run this at first
 DOCRUN="mc"
 #image name for docker use  sudo docker images
@@ -56,19 +56,20 @@ echo "Run with
          -i steam app dir (usually ~/.local/share/Steam/steamapps)
          -p phoronix test suite dir (usually ~/.phoronix-test-suite)
          -n image name with tag
+         -x XDG runtime dir (usually /run/user/1000)
          -c command to run (default mc)
          -h show help message"
 }
          
          
          
-while getopts "h?w:s:i:p:n:c:" opt; do
+while getopts "h?w:s:i:p:n:c:x:" opt; do
     case "$opt" in
     h|\?)
         show_help
         exit 0
         ;;
-    w)  WINE="-v=$OPTARG:/home/gog/.wine"
+    w)  WINE="-v=$OPTARG:/home/gog/.wine:rw"
         echo "WINE BIND $WINE"
         ;;
     s)  STEAM=(-v=$OPTARG:/home/gog/.local/share/Steam/)
@@ -77,14 +78,17 @@ while getopts "h?w:s:i:p:n:c:" opt; do
     i)  STEAM="$STEAM -v=$OPTARG:/home/gog/.local/share/Steam/steamapps/"
         echo "STEAN + STEAM APP BIND $STEAM" 
         ;;
-    p)  PTS="-v=$OPTARG:/home/gog/.phoronix-test-suite"
+    p)  PTS="-v=$OPTARG:/home/gog/.phoronix-test-suite:rw"
         echo "PTS BIND $PTS"
         ;;
     n)  IMAGE_NAME="$OPTARG"
         echo "IMAGE NAME $IMAGE_NAME"
         ;;
+    x)  XDG="-v=$OPTARG:/run/user/1000"
+        echo "XDG PATH $XDG"
+        ;;
     c)  DOCRUN="$OPTARG"
-        echo "run $IMAGE_NAME"
+        echo "run $DOCRUN"
         ;;
     esac
 done
@@ -94,7 +98,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift      
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND -v=$UDV $STEAM $PTS $WINE $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $XDG $IMAGE_NAME $DOCRUN"
 echo "$CMD"
 
 eval  $CMD

@@ -64,8 +64,10 @@ Run with
          -s steam dir(usually ~/.local/share/Steam)
          -i steam app dir (usually ~/.local/share/Steam/steamapps)
          -p phoronix test suite dir (usually ~/.phoronix-test-suite)
-         -n image name or tag
-         -h show help message
+         -n image name with tag
+         -x XDG runtime dir (usually /run/user/1000)
+         -c command to run (default mc)
+         -h show help message"
 ```
 ---
 For wine

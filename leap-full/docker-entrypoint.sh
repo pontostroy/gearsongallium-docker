@@ -21,5 +21,6 @@ export LC_MEASUREMENT=en_US.UTF-8
 export LC_IDENTIFICATION=en_US.UTF-8
 export PWD=/opt
 export WORKDIR=/opt
+export XDG_RUNTIME_DIR=/run/user/1000/
 
 exec "$@"
