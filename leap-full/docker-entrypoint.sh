@@ -22,5 +22,6 @@ export LC_IDENTIFICATION=en_US.UTF-8
 export PWD=/opt
 export WORKDIR=/opt
 export XDG_RUNTIME_DIR=/run/user/1000/
+export AUDIODRIVER=alsa
 
 exec "$@"
