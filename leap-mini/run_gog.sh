@@ -11,7 +11,7 @@ RM="--rm"
 #get current dir
 WD=(WORKDIR=/opt/`basename "$PW"`/)
 #
-DISP="DISPLAY=unix:0.0"
+DISP="DISPLAY=$DISPLAY"
 #X-server socket
 XSOC="/tmp/.X11-unix:/tmp/.X11-unix:rw"
 #dri path
