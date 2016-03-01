@@ -10,9 +10,9 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/mu
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/gst/openSUSE_Leap_42.1/ pont_gst;\
 zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/ packman;\
 zypper --gpg-auto-import-keys ref -s; \
-zypper -n rm krb5-mini; \
-zypper -n --gpg-auto-import-keys up; \
-zypper -n in --no-recommends --replacefiles  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
+zypper -n in --force-resolution  krb5; \
+zypper -n --gpg-auto-import-keys --force-resolution up; \
+zypper -n in  --no-recommends --force-resolution --replacefiles  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
 Mesa-libglapi0  bash libXpm4 libasound2 \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
