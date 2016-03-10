@@ -9,11 +9,12 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/ga
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/gst/openSUSE_Leap_42.1/ pont_gst;\
 zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/ packman;\
+zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/branches:/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont_vulk;\
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n --gpg-auto-import-keys --force-resolution up; \
-zypper -n in  --no-recommends --force-resolution --replacefiles  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
-Mesa-libglapi0  bash libXpm4 libasound2 \
+zypper -n in  --no-recommends --force-resolution --replacefiles Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
+Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 Mesa-libvulkan_intel vulkan libassimp3 \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
