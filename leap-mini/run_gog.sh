@@ -45,9 +45,9 @@ echo "Run with
          -c command to run (default mc)
          -n image name with tag"
 }
-         
-         
-         
+
+
+
 while getopts "h?p:n:" opt; do
     case "$opt" in
     h|\?)
@@ -68,7 +68,7 @@ done
 
 shift $((OPTIND-1))
 
-[ "$1" = "--" ] && shift      
+[ "$1" = "--" ] && shift
 
 
 CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND -v=$UDV $PTS  $IMAGE_NAME $DOCRUN"
