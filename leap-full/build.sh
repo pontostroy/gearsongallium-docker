@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo docker build -t gog-full .
+docker build -t gog-full .
