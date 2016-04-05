@@ -102,4 +102,4 @@ shift $((OPTIND-1))
 CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $XDG $IMAGE_NAME $DOCRUN"
 echo "$CMD"
 
-eval  $CMD
+exec $CMD

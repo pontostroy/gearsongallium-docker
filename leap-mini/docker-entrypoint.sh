@@ -23,4 +23,4 @@ export PWD=/opt
 export WORKDIR=/opt
 export AUDIODRIVER=alsa
 
-eval "$@"
+exec "$@"
