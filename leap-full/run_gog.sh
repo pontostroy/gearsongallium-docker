@@ -61,9 +61,9 @@ echo "Run with
          -c command to run (default mc)
          -h show help message"
 }
-         
-         
-         
+
+
+
 while getopts "h?w:s:i:p:n:c:x:" opt; do
     case "$opt" in
     h|\?)
@@ -96,10 +96,10 @@ done
 
 shift $((OPTIND-1))
 
-[ "$1" = "--" ] && shift      
+[ "$1" = "--" ] && shift
 
 
 CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $XDG $IMAGE_NAME $DOCRUN"
 echo "$CMD"
 
-eval  $CMD
+exec $CMD
