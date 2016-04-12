@@ -24,4 +24,4 @@ export WORKDIR=/opt
 export XDG_RUNTIME_DIR=/run/user/1000/
 export AUDIODRIVER=alsa
 
-exec "$@"
+eval "$@"
