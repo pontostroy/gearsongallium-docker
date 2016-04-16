@@ -9,7 +9,6 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/ga
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/gst/openSUSE_Leap_42.1/ pont_gst;\
 zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/ packman;\
-zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/branches:/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont_vulk;\
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n --gpg-auto-import-keys --force-resolution up; \
@@ -35,7 +34,7 @@ libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo libOpenCL1 \
 mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
-libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston; \
+libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 ; \
 zypper clean
 
 RUN /usr/sbin/fonts-config; \

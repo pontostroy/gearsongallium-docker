@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t gog-mini .
+docker build -t pontostroy/gearsongallium-docker:gog-mini .

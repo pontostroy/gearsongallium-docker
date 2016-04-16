@@ -7,7 +7,6 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/ho
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
-zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/branches:/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont_vulk;\
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n --gpg-auto-import-keys --force-resolution up; \

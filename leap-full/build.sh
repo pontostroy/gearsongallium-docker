@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker build -t gog-full .
+docker build -t pontostroy/gearsongallium-docker:gog-full .
