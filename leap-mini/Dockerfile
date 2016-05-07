@@ -11,7 +11,7 @@ zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n --gpg-auto-import-keys --force-resolution up; \
 zypper -n in --no-recommends --force-resolution  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2 \
-Mesa-libglapi0 bash libXpm4 libasound2 libvulkan1 Mesa-libvulkan_intel vulkan libassimp3 \
+Mesa-libglapi0 bash libXpm4 libasound2 libvulkan1 Mesa-libvulkan_intel vulkan libassimp3 xorg-x11-server-wayland \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \

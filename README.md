@@ -77,6 +77,14 @@ Current workdir directory will be available in docker /opt/
 ```sh
 ./run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -w /home/pont/.wine
 ```
+```sh
+cd /game/path
+run_gog.sh -n pontostroy/gearsongallium-docker:gog-full -w ~/.wine -c "pwd /opt && wine ./speed.exe"
+```
+
+```sh
+run_gog.sh -n -n pontostroy/gearsongallium-docker:gog-full -w /home/pont/.wine/  -c "env GALLIUM_HUD=fps wine /opt/Steam.exe"
+```
 ---
 For phoronix test suite
 /home/pont/.phoronix-test-suite wiil be available in docker /home/gog/.phoronix-test-suite an you can use yours phoronix-test-suite files in docker.
@@ -92,6 +100,10 @@ For Steam
 If you do not have a sound, run steam with LD_PRELOAD
 ```sh
 LD_PRELOAD=/usr/lib/libasound.so.2 steam
+```
+or for 64 bit games
+```sh
+LD_PRELOAD=/usr/lib64/libasound.so.2 steam
 ```
 
 Current workdir directory will be available in docker /opt/

@@ -24,6 +24,10 @@ DBUS="/var/lib/dbus:/var/lib/dbus"
 DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
+ALSRC=""
+if [ -f ~/.asoundrc ] ; then
+ALSRC="~/.asoundrc:/home/gog/.asoundrc"
+fi
 XDG=""
 # run this at first
 DOCRUN="mc"
@@ -99,7 +103,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND $STEAM $PTS $WINE $XDG $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DR -v=$DBUS -v=$SHM -v=$SOUND -v=$ALSRC $STEAM $PTS $WINE $XDG $IMAGE_NAME $DOCRUN"
 echo "$CMD"
 
 eval  $CMD

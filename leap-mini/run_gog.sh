@@ -25,6 +25,10 @@ UDV="/run/udev/data:/run/udev/data"
 DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
+ALSRC=""
+if [ -f ~/.asoundrc ] ; then
+ALSRC="~/.asoundrc:/home/gog/.asoundrc"
+fi
 # run this at first
 DOCRUN="mc"
 #image name for docker use  sudo docker images
@@ -71,7 +75,7 @@ shift $((OPTIND-1))
 [ "$1" = "--" ] && shift
 
 
-CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND -v=$UDV $PTS  $IMAGE_NAME $DOCRUN"
+CMD="$DOCKER $RM -e=$WD -e=$DISP -v=$XSOC -v=$DRI -v=$DIR -v=$DBUS -v=$SHM -v=$SOUND -v=$ALSRC -v=$UDV $PTS  $IMAGE_NAME $DOCRUN"
 echo $CMD
 
 eval  $CMD
