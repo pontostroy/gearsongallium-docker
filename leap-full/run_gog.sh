@@ -26,13 +26,14 @@ DR="$PW:/opt:rw"
 SOUND="/dev/snd:/dev/snd"
 ALSRC=""
 if [ -f ~/.asoundrc ] ; then
-ALSRC="~/.asoundrc:/home/gog/.asoundrc"
+ALSRC="$HOME/.asoundrc:/home/gog/.asoundrc"
+echo "Found .asoundrc"
 fi
 XDG=""
 # run this at first
 DOCRUN="mc"
 #image name for docker use  sudo docker images
-IMAGE_NAME="gog-full"
+IMAGE_NAME="pontostroy/gearsongallium-docker:gog-full"
 ####For Steam 
 #-v="/some_dir:/home/gog/.local/share/Steam" -v="/home/username/.local/share/Steam/steamapps:/home/gog/.local/share/Steam/steamapps"
 #

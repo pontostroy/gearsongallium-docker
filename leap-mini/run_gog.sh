@@ -27,7 +27,7 @@ DR="$PW:/opt:rw"
 SOUND="/dev/snd:/dev/snd"
 ALSRC=""
 if [ -f ~/.asoundrc ] ; then
-ALSRC="~/.asoundrc:/home/gog/.asoundrc"
+ALSRC="$HOME/.asoundrc:/home/gog/.asoundrc"
 fi
 # run this at first
 DOCRUN="mc"
