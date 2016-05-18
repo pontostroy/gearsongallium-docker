@@ -3,6 +3,7 @@ MAINTAINER github/pontostroy
 
 RUN zypper --gpg-auto-import-keys ar -f   http://download.opensuse.org/repositories/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont; \
 zypper mr -p 20 pont; \
+zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/tmp/home_pontostroy_X11_openSUSE_Leap_42.1/ -p 10 pont_exp; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/mnhauke:/opencl:/testing/openSUSE_Leap_42.1/ opencl; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
