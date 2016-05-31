@@ -24,7 +24,7 @@ DBUS="/var/lib/dbus:/var/lib/dbus"
 DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
-ALSRC=""
+ALSRC="/dev/snd:/dev/snd"
 if [ -f ~/.asoundrc ] ; then
 ALSRC="$HOME/.asoundrc:/home/gog/.asoundrc"
 echo "Found .asoundrc"

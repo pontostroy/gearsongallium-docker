@@ -25,7 +25,7 @@ UDV="/run/udev/data:/run/udev/data"
 DR="$PW:/opt:rw"
 #sound
 SOUND="/dev/snd:/dev/snd"
-ALSRC=""
+ALSRC="/dev/snd:/dev/snd"
 if [ -f ~/.asoundrc ] ; then
 ALSRC="$HOME/.asoundrc:/home/gog/.asoundrc"
 fi
