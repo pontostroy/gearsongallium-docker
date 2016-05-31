@@ -3,13 +3,12 @@ MAINTAINER github/pontostroy
 
 RUN zypper --gpg-auto-import-keys ar -f   http://download.opensuse.org/repositories/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont; \
 zypper mr -p 20 pont; \
-zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/tmp/home_pontostroy_X11_openSUSE_Leap_42.1/ pont_exp; \
-zypper mr -p 10 pont_exp; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/mnhauke:/opencl:/testing/openSUSE_Leap_42.1/ opencl; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/gst/openSUSE_Leap_42.1/ pont_gst;\
+zypper mr -p 15 pont_gst; \
 zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Leap_42.1/ packman;\
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
