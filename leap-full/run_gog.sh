@@ -58,7 +58,7 @@ DR=$( echo "$DR" | sed 's/ /\\ /g' )
 function show_help {
 echo "Run with
          -w wine dir(usually ~/.wine)
-         -s steam dir(usually ~/.local/share/Steam)
+         -s steam dir(usually ~/.local/share/Steam or ~/.steam )
          -i steam app dir (usually ~/.local/share/Steam/steamapps)
          -p phoronix test suite dir (usually ~/.phoronix-test-suite)
          -n image name with tag

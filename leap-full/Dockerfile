@@ -35,7 +35,7 @@ libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo libOpenCL1 \
 mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
-libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 ; \
+libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 fetchmsttfonts; \
 zypper clean
 
 RUN /usr/sbin/fonts-config; \
