@@ -14,7 +14,7 @@ zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n --gpg-auto-import-keys --force-resolution up; \
 zypper -n in  --no-recommends --force-resolution --replacefiles Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
-Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 Mesa-libvulkan_intel vulkan libassimp3 xorg-x11-server-wayland \
+Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 libvulkan_intel vulkan libassimp3 xorg-x11-server-wayland \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
@@ -35,7 +35,7 @@ libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo libOpenCL1 \
 mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
-libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 fetchmsttfonts; \
+libvdpau_r600 libvdpau_nouveau gstreamer-plugins-bad-orig-addon libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 fetchmsttfonts libvirglrenderer0 \
 zypper clean
 
 RUN /usr/sbin/fonts-config; \
