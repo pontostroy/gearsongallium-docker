@@ -22,7 +22,7 @@ libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0
 libxcb-composite0 libXTrap6 libXfont1  libXft2 \
 libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
 libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6  strace which \
-libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse \
+libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse;
 zypper clean
 
 RUN /usr/sbin/fonts-config; \
