@@ -20,7 +20,7 @@ llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
 libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config \
 dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
-php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr \
+php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr gwenhywfar-tools \
 libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 \
 libxcb-composite0 libXTrap6 libXfont1 libXft2 \
 libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
@@ -46,6 +46,7 @@ ln -s /usr/lib/libGLEW.so.1.13 /usr/lib/libGLEW.so.1.5; \
 ln -s /usr/lib/libudev.so.1.4.0 /usr/lib/libudev.so.0; \
 ln -s /usr/lib/libbz2.so.1 /usr/lib/libbz2.so.1.0; \
 ln -s /usr/lib64/librtmp.so.1 /usr/lib64/librtmp.so.0; \
+ln -s /usr/share/gwenhywfar/ca-bundle.crt  /etc/ssl/certs/ca-certificates.crt; \
 rm -rf /var/log/zypper.log; \
 rm -rf /etc/cron.daily/*; \
 rm -rf /etc/cron.hourly/*; \
