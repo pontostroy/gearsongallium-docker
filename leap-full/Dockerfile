@@ -3,6 +3,8 @@ MAINTAINER github/pontostroy
 
 RUN zypper --gpg-auto-import-keys ar -f   http://download.opensuse.org/repositories/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont; \
 zypper mr -p 20 pont; \
+zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/branches:/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont_exp; \
+zypper mr -p 10 pont_exp; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/mnhauke:/opencl:/testing/openSUSE_Leap_42.1/ opencl; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
@@ -14,11 +16,11 @@ zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n up --gpg-auto-import-keys --force-resolution; \
 zypper -n in  --no-recommends -l --replacefiles --force-resolution Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
-Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 libvulkan_intel vulkan libassimp3 xorg-x11-server-wayland \
+Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 libvulkan_radeon vulkan libassimp3 xorg-x11-server-wayland \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
-libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config \
+libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config libmad0 \
 dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
 php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr gwenhywfar-tools \
 libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 \
