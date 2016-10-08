@@ -15,7 +15,7 @@ zypper --gpg-auto-import-keys ar -f http://ftp.gwdg.de/pub/linux/misc/packman/su
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n up --gpg-auto-import-keys --force-resolution; \
-zypper -n in  --no-recommends -l --replacefiles --force-resolution Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
+zypper -n in --no-recommends -l --replacefiles --force-resolution Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libd3d Mesa-libGLESv2-2 \
 Mesa-libglapi0  bash libXpm4 libasound2 libvulkan1 libvulkan_radeon libvulkan_intel vulkan libassimp3 xorg-x11-server-wayland \
 Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
@@ -24,18 +24,18 @@ libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config libmad0 \
 dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
 php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr gwenhywfar-tools \
 libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 \
-libxcb-composite0 libXTrap6 libXfont1 libXft2 \
-libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
+libxcb-composite0 libXTrap6 libXfont1 libXft2 libXss1 \
+libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15 libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
 libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6 libgnutls-openssl27 alsa-plugins-pulse alsa-oss \
 libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse strace which \
 wine steam tar unzip coreutils ca-certificates-cacert ca-certificates-mozilla libcanberra-gtk2-module \
-Mesa-libd3d-32bit Mesa-libGLESv1_CM1-32bit Mesa-libGLESv2-2-32bit libbz2-1-32bit libGLEW1_13-32bit libXi6 libICE6-32bit libSM6-32bit  libXtst6-32bit libXinerama1-32bit libtxc_dxtn-32bit \
+Mesa-libd3d-32bit Mesa-libGLESv1_CM1-32bit Mesa-libGLESv2-2-32bit libbz2-1-32bit libGLEW1_13-32bit libXi6 libICE6-32bit libSM6-32bit libXss1-32bit libXtst6-32bit libXinerama1-32bit libtxc_dxtn-32bit \
 libSDL-1_2-0-32bit  libSDL2-2_0-0-32bit libSDL_gfx15-32bit  libSDL2_gfx-1_0-0-32bit libusb-1_0-0-32bit \
 libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gconf2-32bit alsa-plugins-pulse-32bit alsa-oss-32bit \
 libxcb-xf86dri0-32bit libxcb-xv0-32bit libxcb-util1-32bit libxcb-image0-32bit libxcb-dpms0-32bit  libxcb-dpms0-32bit libxcb-cursor0-32bit \
 libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
-mpv-0.11.0-1.1 gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
+mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
 libvdpau_r600 libvdpau_nouveau libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 fetchmsttfonts libvirglrenderer0 Mesa-libOpenCL Mesa-libOpenCL-32bit clpeak clinfo libOpenCL1;\ 
 zypper clean
 
