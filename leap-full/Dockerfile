@@ -3,8 +3,6 @@ MAINTAINER github/pontostroy
 
 RUN zypper --gpg-auto-import-keys ar -f   http://download.opensuse.org/repositories/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont; \
 zypper mr -p 20 pont; \
-zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/pontostroy:/branches:/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont_exp; \
-zypper mr -p 10 pont_exp; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/mnhauke:/opencl:/testing/openSUSE_Leap_42.1/ opencl; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
@@ -77,4 +75,4 @@ passwd -d root
 USER gog
 COPY ./env.sh /home/gog/.bashrc
 COPY ./docker-entrypoint.sh /
-ENTRYPOINT ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/docker-entrypoint.sh"]
