@@ -21,7 +21,7 @@ libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 
 libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config libmad0 \
 dejavu-fonts  bitstream-vera php5 php5-zip php5-bz2 php5-gd php5-mbstring \
 php5-ctype php5-xmlreader php5-gettext php5-zlib php5-dom php5-pcntl php5-posix php5-curl php5-json php5-openssl librtmp1 xrandr gwenhywfar-tools \
-libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 \
+libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0 libxcb-cursor0 libxcb-damage0 libxcb-render-util0 libopusfile0 libmikmod3 \
 libxcb-composite0 libXTrap6 libXfont1 libXft2 libXss1 \
 libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15 libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
 libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6 libgnutls-openssl27 alsa-plugins-pulse alsa-oss \
