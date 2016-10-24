@@ -33,7 +33,7 @@ libcrypto36-32bit  libssl37-32bit libtls9-32bit libgbm1-32bit libGLU1-32bit gcon
 libxcb-xf86dri0-32bit libxcb-xv0-32bit libxcb-util1-32bit libxcb-image0-32bit libxcb-dpms0-32bit  libxcb-dpms0-32bit libxcb-cursor0-32bit \
 libxcb-damage0-32bit libxcb-render-util0-32bit libXft2-32bit \
 libxcb-composite0-32bit libXTrap6-32bit libXfont1-32bit \
-mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver libva_mesa libvdpau_radeonsi \
+mpv gst-omx gstreamer gstreamer-plugins-bad gstreamer-plugins-base gstreamer-plugins-good gstreamer-plugins-ugly gstreamer-plugins-vaapi vaapi-intel-driver Mesa-libva libvdpau_radeonsi \
 libvdpau_r600 libvdpau_nouveau libomx_mesa vaapi-tools libomxil-bellagio gstreamer-utils xwininfo weston libglfw3  libglfw2 fetchmsttfonts libvirglrenderer0 Mesa-libOpenCL Mesa-libOpenCL-32bit clinfo libOpenCL1;\ 
 zypper clean
 

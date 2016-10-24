@@ -10,9 +10,9 @@ zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/mu
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
 zypper -n up --gpg-auto-import-keys --force-resolution; \
-zypper -n in --no-recommends --force-resolution  Mesa Mesa-demos libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2 \
+zypper -n in --no-recommends --force-resolution  Mesa Mesa-demos Mesa-libva libtxc_dxtn Mesa-libGL1 Mesa-libGLESv2-2 \
 Mesa-libglapi0 bash libXpm4 libasound2 libvulkan1 libvulkan_intel libvulkan_radeon vulkan libassimp3 xorg-x11-server-wayland \
-Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less \ 
+Mesa-libGLESv1_CM1 libgbm1 libGLU1 libGLEW1_13 pciutils mc less libvdpau_radeonsi libvdpau_r600 libvdpau_nouveau \ 
 llvm-r600-clang libgomp1 libfreeimage3 libglut3 libgobject-2_0-0 libgthread-2_0-0 htop \
 libX11-xcb1 libxcb1 libxcb-glx0 libxcb-present0 libXi6 libICE6 libSM6  libXtst6 libXinerama1 \
 libxcb-xinerama0 libfreetype6 fontconfig glibc-locale fonts-config \
