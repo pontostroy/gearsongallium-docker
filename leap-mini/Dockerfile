@@ -1,4 +1,4 @@
-FROM opensuse:leap
+FROM opensuse:42.2
 MAINTAINER github/pontostroy
 
 RUN zypper --gpg-auto-import-keys ar -f   http://download.opensuse.org/repositories/home:/pontostroy:/X11/openSUSE_Leap_42.1/ pont; \
@@ -6,6 +6,7 @@ zypper mr -p 20 pont; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/home:/mnhauke:/opencl:/testing/openSUSE_Leap_42.1/ opencl; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games:/tools/openSUSE_Leap_42.1/ games-tools; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/games/openSUSE_Leap_42.1/ games; \
+zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/security/openSUSE_Leap_42.2/ security; \
 zypper --gpg-auto-import-keys ar -f http://download.opensuse.org/repositories/multimedia:/libs/openSUSE_Leap_42.1/ media_libs; \
 zypper --gpg-auto-import-keys ref -s; \
 zypper -n in --force-resolution  krb5; \
@@ -22,7 +23,7 @@ libxcb-xf86dri0 libxcb-xv0 libxcb-util1 libxcb-image0 libxcb-dpms0  libxcb-dpms0
 libxcb-composite0 libXTrap6 libXfont1  libXft2 libopusfile0 libmikmod3 \
 libSDL-1_2-0  libSDL2-2_0-0 libSDL_gfx15  libSDL2_gfx-1_0-0 curl wget libgcrypt11 \
 libSDL2_image-2_0-0 libSDL2_mixer-2_0-0 sudo libstdc++6  strace which \
-libcrypto36 libssl37 libtls9 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse; \
+libcrypto38 libssl39 libtls11 libalut0 libphysfs1 libspeexdsp1 libspeex1 alsa alsa-utils apulse; \
 zypper clean
 
 RUN /usr/sbin/fonts-config; \
