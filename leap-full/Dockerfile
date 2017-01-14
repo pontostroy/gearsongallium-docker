@@ -41,10 +41,10 @@ zypper clean
 RUN /usr/sbin/fonts-config; \
 ln -s /sbin/lspci /usr/bin/lspci; \
 ln -s /usr/lib64/libGLEW.so.1.13 /usr/lib64/libGLEW.so.1.5; \
-ln -s /usr/lib64/libudev.so.1.4.0 /usr/lib64/libudev.so.0; \
+ln -s /usr/lib64/libudev.so.1 /usr/lib64/libudev.so.0; \
 ln -s /usr/lib64/libbz2.so.1 /usr/lib64/libbz2.so.1.0; \
 ln -s /usr/lib/libGLEW.so.1.13 /usr/lib/libGLEW.so.1.5; \
-ln -s /usr/lib/libudev.so.1.4.0 /usr/lib/libudev.so.0; \
+ln -s /usr/lib/libudev.so.1 /usr/lib/libudev.so.0; \
 ln -s /usr/lib/libbz2.so.1 /usr/lib/libbz2.so.1.0; \
 ln -s /usr/lib64/librtmp.so.1 /usr/lib64/librtmp.so.0; \
 ln -s /usr/share/gwenhywfar/ca-bundle.crt  /etc/ssl/certs/ca-certificates.crt; \
