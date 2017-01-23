@@ -48,6 +48,7 @@ ln -s /usr/lib/libudev.so.1 /usr/lib/libudev.so.0; \
 ln -s /usr/lib/libbz2.so.1 /usr/lib/libbz2.so.1.0; \
 ln -s /usr/lib64/librtmp.so.1 /usr/lib64/librtmp.so.0; \
 ln -s /usr/share/gwenhywfar/ca-bundle.crt  /etc/ssl/certs/ca-certificates.crt; \
+ln -s /usr/share/gwenhywfar/ca-bundle.crt  /etc/ssl/certs/ca-bundle.crt; \
 rm -rf /var/log/zypper.log; \
 rm -rf /etc/cron.daily/*; \
 rm -rf /etc/cron.hourly/*; \
